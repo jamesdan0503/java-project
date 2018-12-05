@@ -12,7 +12,7 @@ node('linux') {
 		sh 'ant -f build.xml -v'
 	}
 	stage('Deploy') {
-		sh 'aws s3 cp /workspace/java-pipeline/dist/ s3://bucket/Assignment10 --recursive --exclude "*" --include "*.jar"'
+		sh 'aws s3 cp /workspace/java-pipeline/dist/ s3://bucket/as10buckettesting/Assignment10 --recursive --exclude "*" --include "*.jar"'
 	}
 
 	stage('Report') {
