@@ -3,6 +3,7 @@ properties([pipelineTriggers([githubPush()])])
 node('linux') {   
 	stage('UnitTest') {
 		sh 'pwd'
+		sh 'ls -l'
 		sh 'ant -f ./test.xml -v'
 		junit 'reports/result.xml'
 	}   
