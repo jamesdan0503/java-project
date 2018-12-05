@@ -10,9 +10,7 @@ node('linux') {
 		sh 'ant'
 		sh 'ant -f build.xml -v'
 	}
-	stage('deploy') {
-	
-	}
+
 	stage('Report') {    
 		junit 'reports/*.xml'
 	}
