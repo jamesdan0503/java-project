@@ -11,7 +11,7 @@ node('linux') {
 		sh 'ant -f build.xml -v'
 	}
 	stage('Deploy') {
-		
+		sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle-*.jar s3://bucket/elasticbeanstalk-us-east-1-651903360651 --recursive --exclude "*" --include "*.jpg"'
 	}
 
 	stage('Report') {    
