@@ -3,9 +3,8 @@ properties([pipelineTriggers([githubPush()])])
 node('linux') {   
 	stage('UnitTest') {
 		git 'https://github.com/jamesdan0503/java-project.git'
-		sh 'pwd'
-		sh 'ls -l'
-		sh 'ant -f ./test.xml -v'
+		sh 'ant'
+		sh 'ant -f test.xml -v'
 		junit 'reports/result.xml'
 	}   
 	stage('Build') {    
